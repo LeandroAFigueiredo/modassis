@@ -1,0 +1,60 @@
+<%= form_with(model: stock, local: true) do |form| %>
+  <% if stock.errors.any? %>
+    <div id="error_explanation">   
+      <ul>
+        <% stock.errors.full_messages.each do |message| %>
+        <script>
+          $.notify("<%= message %>", "error");
+        </script>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1> <%= "#{Stock.model_name.human(count: 1)}"%></h1>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <form>  
+          <div class="form-group row">
+            <div class="col-md-4 mb-3">
+              <%= form.collection_select(:product_id, @product_options_for_select, :id, :descricao) %>
+            </div>
+
+            <div class="col-md-1 mb-1">
+              <%= form.collection_select(:provider_id, @provider_options_for_select, :id, :nome) %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-4 mb-3">
+              <%= form.text_field :quantidade, class: "form-control", placeholder: "* Quantidade", "aria-describedby": true, required: true %> 
+            </div>
+
+            <div class="col-md-4 mb-3">
+             <%= form.text_field :preco, id: "money", placeholder: "* Valor" %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+
+            <div class="col-md-1 mb-1">
+              <%= form.select :tamanho, options_for_size(@stock.tamanho),  class: "form-control",placeholder: " Tamanho" %>
+            </div>
+
+            <div class="col-md-4 mb-3">
+              <%= form.text_field :dt_entrada, id: "date", maxlength: "10" %>
+            </div>
+          </div>  
+
+        </div>
+
+        <div class="field">
+          <%= form.submit "Enviar", class: "btn btn-primary" %>
+          <%= link_to 'Voltar', stocks_path, class: "btn btn-success" %>
+        </div>
+
+      </form>
+  </div>
+
+<% end %>

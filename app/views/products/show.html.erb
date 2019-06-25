@@ -1,0 +1,36 @@
+<h1> <%= "#{Product.model_name.human(count: 1)}"%></h1>
+
+<form>
+  <div class="table table-bordered"> 
+
+    <div class="form row">
+
+      <div class="col-md-4 mb-3">
+        <strong>Referência: </strong>    
+        <%= @product.referencia %>
+      </div>
+      
+      <div class="col-md-4 mb-3">
+        <strong>Descrição: </strong>    
+        <%= @product.descricao %>
+      </div>
+      
+    </div>
+
+    <div class="form row">
+    
+      <div class="col-md-4 mb-3">
+        <strong>Cor: </strong>    
+        <%= @product.cor %>
+      </div>
+    </div>
+            
+    </div>
+
+<br/>
+  <div class="field">
+    <%= link_to 'Editar', edit_product_path(@product), class: "btn btn-primary" %>
+    <%= link_to 'Voltar', products_path, class: "btn btn-success" %>
+  </div>
+
+</form>

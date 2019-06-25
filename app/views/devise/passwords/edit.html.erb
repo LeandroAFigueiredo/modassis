@@ -1,0 +1,46 @@
+<%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track' => true %>
+<div class="wrapper">
+  <div id="formContent">
+
+   <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |form| %>
+
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form.hidden_field :reset_password_token %>
+
+      <div class="fadeIn first">
+        <div class = "h2login"><%= t('.change_your_password') %></div>
+      </div>
+
+      <!-- New Password Form -->
+      <form>
+        <div class="field">
+          
+          <%= form.label :password, t('.new_password') %><br />
+          
+          <% if @minimum_password_length %>
+            <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em><br />
+          <% end %>
+          <%= form.password_field :password, autofocus: true, autocomplete: "new-password" %>
+        </div><br />
+
+        <div class="field">
+          <%= form.label :password_confirmation, t('.confirm_new_password') %><br />
+          <%= form.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit t('.change_my_password') %>
+        </div>
+      </form>
+
+    <% end %>
+    
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <div class="actions">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+
+  </div>
+</div>

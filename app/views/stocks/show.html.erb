@@ -1,0 +1,54 @@
+<h1> <%= "#{Stock.model_name.human(count: 1)}"%></h1>
+
+<form>
+  <div class="table table-bordered"> 
+
+    <div class="form row">
+
+      <div class="col-md-4 mb-3">
+        <strong>Descrição: </strong>    
+        <%= @stock.product.descricao %>
+      </div>
+      
+      <div class="col-md-4 mb-3">
+        <strong>Fornecedor: </strong>    
+        <%= @stock.provider.nome %>
+      </div>
+      
+    </div>
+
+    <div class="form row">
+
+      <div class="col-md-4 mb-3">
+        <strong>Quantidade de peças: </strong>    
+        <%= @stock.quantidade %>
+      </div>
+      
+      <div class="col-md-4 mb-3">
+        <strong>Valor Unitário: </strong>    
+        <%= number_to_currency(@stock.preco) %>
+      </div>
+    </div>
+
+      <div class="form row">
+
+      <div class="col-md-4 mb-3">
+        <strong>Tamanho: </strong>    
+        <%= @stock.tamanho %>
+      </div>  
+
+      <div class="col-md-4 mb-3">
+         <strong>Data de Entrada: </strong>    
+        <%= localize(@stock.dt_entrada, format: :default) %>
+      </div>
+            
+    </div>
+   </div>
+
+<br/>
+  <div class="field">
+    <%= link_to 'Editar', edit_stock_path(@stock), class: "btn btn-primary" %>
+    <%= link_to 'Voltar', stocks_path, class: "btn btn-success" %>
+  </div>
+
+</form>

@@ -1,0 +1,17 @@
+<div class="nested-fields">
+  <td>
+  <div class="field">
+       
+    <%= form.number_field :quantidade, class: "number_field", :value => 1 %>
+    
+  </div>
+</td>
+
+	<td>
+    <div class="field">
+       
+	<%= number_to_currency(stock.preco) %>
+    
+  </div>
+  </td>
+</div>

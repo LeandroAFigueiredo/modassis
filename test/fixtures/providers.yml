@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cpf_cnpj: MyString
+  tipo_pessoa: MyString
+  cep: MyString
+  end_logr: MyString
+  end_num: 1
+  end_compl: MyString
+  end_cid: MyString
+  end_ug: MyString
+  tel_fixo: MyString
+  tel_cel: MyString
+
+two:
+  name: MyString
+  cpf_cnpj: MyString
+  tipo_pessoa: MyString
+  cep: MyString
+  end_logr: MyString
+  end_num: 1
+  end_compl: MyString
+  end_cid: MyString
+  end_ug: MyString
+  tel_fixo: MyString
+  tel_cel: MyString

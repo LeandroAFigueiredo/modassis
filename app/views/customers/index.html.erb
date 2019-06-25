@@ -1,0 +1,68 @@
+<script>
+  $.notify("<%= notice %>", "success");
+</script>
+
+<div class="row">
+  <div class="col-sm-9">
+    <h1><%= "#{Customer.model_name.human(count: 2)}" %></h1>
+    <div class="row">
+      <div class="text-right">
+        <%= form_tag(customers_path, method: :get) do |form|%>
+          <%= text_field_tag 'search', nil, placeholder: 'Procure um Cliente...', class: "text-margin" %>
+          <%= submit_tag t('buttons.search'), class: "btn btn-info bt-margin-submit btn-sm", type: "submit" %>
+          <%= link_to t('buttons.new'), new_customer_path, class: "btn btn-primary bt-margin" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+ <br />
+ <br />      
+
+<div class="row">
+  <div class="col">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Email</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @customers.each do |customer| %>
+          <tr>
+            <td><%= customer.nome %></td>
+            
+            <% #Mostra algum número de telefone cadstrado, sendo o Celular o Principal %>
+            <td>
+              <% if(!customer.tel_cel.blank?) %>
+                <%= customer.tel_cel %>
+              <%elsif(!customer.tel_fixo.blank?) %>
+                <%= customer.tel_fixo %>
+              <% else %>
+                <%= customer.tel_trab %>
+              <% end %>      
+            </td>
+            
+            <td><%= customer.email %></td>
+            <td><%= link_to t('buttons.show'), customer, class: "btn btn-info" %></td>
+            <td><%= link_to t('buttons.edit'), edit_customer_path(customer), class: "btn btn-warning" %></td>
+            
+            <% if can? :destroy, Customer %>  
+              <td><%= link_to t('buttons.destroy'), customer, method: :delete, data: { confirm: t('messages.confirm') }, class: "btn btn-danger" %></td>
+          
+            <% end %>
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+ 
+<%= will_paginate @customers %>
+
+ 

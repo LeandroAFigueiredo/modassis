@@ -1,0 +1,55 @@
+<script>
+  $.notify("<%= notice %>", "success");
+</script>
+
+<div class="row">
+  <div class="col-sm-9">
+    <h1><%= "#{Stock.model_name.human(count: 2)}" %></h1>
+    <div class="row">
+      <div class="text-right">
+        <%= form_tag(stocks_path, method: :get) do |form|%>
+          <%= text_field_tag 'searchStock', nil, placeholder: 'Procure um Produto...', class: "text-margin" %>
+          <%= submit_tag t('buttons.search'), class: "btn btn-info bt-margin-submit btn-sm", type: "submit" %>
+          <%= link_to t('buttons.new'), new_stock_path, class: "btn btn-primary bt-margin" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+ <br />
+ <br />      
+
+<div class="row">
+  <div class="col">
+    <table class="table table-striped table-hover">
+      <thead>
+       <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Preço</th>
+          <th colspan="3"></th>
+       </tr>
+      </thead>
+
+      <tbody>
+        <% @stocks.each do |stock| %> 
+          <tr>
+            <td><%= stock.product.descricao %></td>
+            <td><%= stock.quantidade %></td>
+            <td><%= number_to_currency(stock.preco) %></td>
+            <td><%= link_to t('buttons.show'), stock, class: "btn btn-info" %></td>
+            <td><%= link_to t('buttons.edit'), edit_stock_path(stock), class: "btn btn-warning" %></td>
+            
+            <% if can? :destroy, Stock %>  
+              <td><%= link_to t('buttons.destroy'), stock, method: :delete, data: { confirm: t('messages.confirm') }, class: "btn btn-danger" %></td>
+            
+            <% end %>
+          
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+ 
+<%= will_paginate @stocks %>

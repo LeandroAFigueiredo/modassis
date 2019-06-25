@@ -1,0 +1,11 @@
+"pt-BR":
+  messages:
+    confirm: Tem Certeza?
+    error: Preencha ao menos um telefone!
+    errorCPF&CNPJ: Número Inválido!
+    errorPF_PJ: Cadastre um CPF ou CNPJ válido! 
+    created: Item criado com sucesso!
+    updated: Item Atualizado com Sucesso!
+    destroyed: Item Excluído com Sucesso!
+    search: Tente novamente com uma informação válida!
+    errocancancan: "Este usuário não tem permissão, contate o administrador do sistema."

@@ -1,0 +1,122 @@
+<h1> <%= "#{Customer.model_name.human(count: 1)}"%></h1>
+
+<form>
+
+  <div class="form row">
+    <div class="col-md-4 mb-3">
+      <strong>Nome: </strong>
+        <%= @customer.nome %>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <strong>E-mail: </strong> 
+        <%= @customer.email %>
+    </div>
+  </div>
+
+  <div class="form row">
+
+    <div class="col-md-4 mb-3">
+      <strong>CPF: </strong>    
+      <%= format_cpf(@customer.cpf) %>
+    </div>
+    
+    <div class="col-md-4 mb-3">
+      <strong>Data de Nascimento: </strong>    
+      <%= @customer.dt_nasc %>
+    </div>
+    
+  </div>
+
+  <div class="form row">
+
+    <div class="col-md-4 mb-3">
+      <strong>RG: </strong>    
+      <%= @customer.rg %>
+    </div>
+    
+    <div class="col-md-4 mb-3">
+     <strong>Emissor: </strong>    
+      <%= @customer.rg_emissor %>
+    </div>
+    
+  </div>
+  <br/>
+
+  <label> Endereço</label>
+
+  <div class="table table-bordered"> 
+
+    <div class="form row">
+
+      <div class="col-md-4 mb-3">
+        <strong>Endereço: </strong>    
+        <%= @customer.end_logr %>
+      </div>
+      
+      <div class="col-md-4 mb-3">
+        <strong>Número: </strong>    
+        <%= @customer.end_num %>
+      </div>
+      
+    </div>
+
+    <div class="form row">
+
+      <div class="col-md-4 mb-3">
+        <strong>Complemento: </strong>    
+        <%= @customer.end_compl %>
+      </div>
+      
+      <div class="col-md-4 mb-3">
+        <strong>CEP: </strong>    
+        <%= @customer.cep %>
+      </div>
+    </div>
+
+      <div class="form row">
+
+      <div class="col-md-4 mb-3">
+         <strong>Cidade: </strong>    
+        <%= @customer.end_cid %>
+      </div>
+      
+      <div class="col-md-4 mb-3">
+         <strong>UG: </strong>    
+        <%= @customer.end_ug %>
+      </div>
+      
+    </div>
+   </div>
+ 
+  <label> Telefone</label>
+
+  <div class="table table-bordered"> 
+
+    <div class="form row">
+
+      <div class="col-md-4 mb-3">
+        <strong>Telefone Fixo: </strong>    
+        <%= @customer.tel_fixo %>
+      </div>
+      
+      <div class="col-md-4 mb-3">
+        <strong>Celular: </strong>    
+        <%= @customer.tel_cel %>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <strong>Trabalho: </strong>    
+        <%= @customer.tel_trab %>
+      </div>
+      
+    </div>
+   </div>
+
+<br/>
+
+<div class="field">
+    <%= link_to 'Editar', edit_customer_path(@customer), class: "btn btn-primary" %>
+    <%= link_to 'Voltar', customers_path, class: "btn btn-success" %>
+  </div>
+</form>
