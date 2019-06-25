@@ -61,4 +61,15 @@ module ApplicationHelper
         options_for_select(TAMANHO, selected)
     end
 
+        FORMA_PAGAMENTO = [
+        ["Dinheiro","Dinheiro"],
+        ["Cartão Débito","Cartão Débito"],
+        ["Cartão Crédito","Cartão Crédito"],
+        ["Cheque","Cheque"]
+    ]
+    #Mostrar os Forma de Pagamento
+    def pagamento_options_for_size(selected)  
+        options_for_select(FORMA_PAGAMENTO, selected)
+    end
+
 end
