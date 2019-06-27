@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
+
+  get 'reports/funcionario', to: 'reports#funcionario'
   resources :purchases
-  resources :reports, only: [:index]
+  resources :reports, only: [:index, :funcionario]
   resources :customers
   resources :providers
   resources :stocks

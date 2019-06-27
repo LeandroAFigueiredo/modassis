@@ -28,7 +28,7 @@ end
 puts "Clientes Cadastrados"
 
 puts "Cadastrando os Fornecedores - PF"
-2.times do |i|
+1.times do |i|
 	Provider.create!(
 	nome: Faker::Name.name,
 	cpf: CPF.generate,
@@ -45,9 +45,8 @@ end
 puts "Fornecedores Cadastrados - PF"
 
 puts "Cadastrando os Fornecedores - PJ"
-2.times do |i|
 	Provider.create!(
-	nome: Faker::Commerce.department,
+	nome: "Karina Rabello",
 	cnpj: CNPJ.generate,
 	cep: Faker::Address.zip_code,
 	end_logr: Faker::Address.street_name,
@@ -58,6 +57,33 @@ puts "Cadastrando os Fornecedores - PJ"
 	tel_fixo: Faker::PhoneNumber.phone_number,
 	tel_cel: Faker::PhoneNumber.cell_phone
 	)
-end
 
+
+	Provider.create!(
+	nome: "Maria Pinheiro",
+	cnpj: CNPJ.generate,
+	cep: Faker::Address.zip_code,
+	end_logr: Faker::Address.street_name,
+	end_num: Faker::Address.building_number,
+	end_compl: Faker::Address.secondary_address,
+	end_cid: Faker::Address.city_suffix,
+	#end_ug: Faker::Address.state_abbr,
+	tel_fixo: Faker::PhoneNumber.phone_number,
+	tel_cel: Faker::PhoneNumber.cell_phone
+	)
+
+
+	Provider.create!(
+	nome: "Class Brasil",
+	cnpj: CNPJ.generate,
+	cep: Faker::Address.zip_code,
+	end_logr: Faker::Address.street_name,
+	end_num: Faker::Address.building_number,
+	end_compl: Faker::Address.secondary_address,
+	end_cid: Faker::Address.city_suffix,
+	#end_ug: Faker::Address.state_abbr,
+	tel_fixo: Faker::PhoneNumber.phone_number,
+	tel_cel: Faker::PhoneNumber.cell_phone
+	)
+ 
 puts "Fornecedores Cadastrados - PJ"

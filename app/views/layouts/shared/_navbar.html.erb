@@ -47,6 +47,12 @@
 					</li>
 				<% end %>
 
+				<% if can? :destroy, User %>	  
+					<li class="nav-item">
+						<%= link_to "Relatório", reports_funcionario_path, :class=> "nav-link navbar-text" %>
+					</li>
+				<% end %>
+
 				<li class="nav-item">
 					<%= link_to "Sair", destroy_user_session_path, method: :delete, :class=> "nav-link navbar-text" %>
 				</li>

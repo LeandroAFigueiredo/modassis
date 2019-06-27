@@ -8,6 +8,7 @@ class Ability
 
     	elsif user.present?  # additional permissions for logged in users (they can read their own posts)
       		can [:read, :update, :create], [Customer, Stock, Product, Purchase]
+      		can :destroy, User
     end
   end
 
