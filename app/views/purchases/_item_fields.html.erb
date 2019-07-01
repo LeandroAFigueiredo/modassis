@@ -1,28 +1,28 @@
 <div class="nested-fields">
+	<div class="field">
+		<table class="table table-striped table-hover">	
+	  		<td> 
+	  			<%= form.collection_select(:purchase_id, @product_options_for_select, :id, :referencia) %> 
+			</td>
 
-  	<div class="field">
+	    	<td>
+	    		<%= form.text_field :quantidade, class: "form-control", placeholder: "* Produto ", "aria-describedby": true, required: true, disabled: true %>
+	    	</td>
+		    
+	    	<td>
+	    		<%= form.number_field :quantidade, class: "number_field", :value => 1 %>
+			</td>
 
-  		<td> 
-  			<%= form.collection_select(:purchase_id, @product_options_for_select, :id, :referencia) %> 
-		</td>
+		    <td>
+		    	R$ 300,00
+		    </td>
 
-    	<td>
-    		<%= form.text_field :quantidade, class: "form-control", placeholder: "* Produto ", "aria-describedby": true, required: true, disabled: true %>
-    		
-    	</td>
-    
-    	<td>
-    		<%= form.number_field :quantidade, class: "number_field", :value => 1 %>
-    	</td>
-
-    	<td>
-    		R$ 300,00
-    	</td>
-
-    	<td> 
-    		<%#= link_to_remove_association 'remover', form %>	
-    	</td>
-
+		    <td> 
+		    	<%= link_to_remove_association '[-]', form %>	
+		    </td>
+	    
+	    </table>
     </div>
 
 </div>
+		
