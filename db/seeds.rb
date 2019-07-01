@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Cadastrando os Clientes"
-100.times do |i|
+20.times do |i|
 	Customer.create!(
 	nome: Faker::Name.name,
 	cpf: CPF.generate,
@@ -26,23 +26,6 @@ puts "Cadastrando os Clientes"
 	)
 end
 puts "Clientes Cadastrados"
-
-puts "Cadastrando os Fornecedores - PF"
-1.times do |i|
-	Provider.create!(
-	nome: Faker::Name.name,
-	cpf: CPF.generate,
-	end_logr: Faker::Address.street_name,
-	end_num: Faker::Address.building_number,
-	end_compl: Faker::Address.secondary_address,
-	end_cid: Faker::Address.city_suffix,
-	#end_ug: Faker::Address.state_abbr,
-	tel_fixo: Faker::PhoneNumber.phone_number,
-	tel_cel: Faker::PhoneNumber.cell_phone
-	)
-end
-
-puts "Fornecedores Cadastrados - PF"
 
 puts "Cadastrando os Fornecedores - PJ"
 	Provider.create!(

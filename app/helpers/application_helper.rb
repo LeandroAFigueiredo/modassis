@@ -63,8 +63,8 @@ module ApplicationHelper
 
         FORMA_PAGAMENTO = [
         ["Dinheiro","Dinheiro"],
-        ["Cartão Débito","Cartão Débito"],
-        ["Cartão Crédito","Cartão Crédito"],
+        ["Cartão de Débito","Cartão deDébito"],
+        ["Cartão de Crédito","Cartão de  Crédito"],
         ["Cheque","Cheque"]
     ]
     #Mostrar os Forma de Pagamento

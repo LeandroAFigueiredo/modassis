@@ -33,6 +33,8 @@ gem 'cancancan', '~> 3.0', '>= 3.0.1'
 gem 'money-rails', '~> 1.13', '>= 1.13.2'
 #Power-BI
 gem 'power_bi_embedded', '~> 0.1.3'
+#Unobtrusive nested forms handling, using jQuery.
+gem 'cocoon', '~> 1.2', '>= 1.2.14'
 
 
 

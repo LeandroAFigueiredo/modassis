@@ -38,21 +38,17 @@
 
         <tbody>
           <tr>
-           <td> <%= form.collection_select(:product_id, @product_options_for_select, :id, :referencia) %> </td>
-          
-          <td><%= form.text_field :product, class: "form-control", placeholder: "* Produto ", "aria-describedby": true, required: true, disabled: true %></td>
 
-          <div id= "items">
-          
-             <%= form.fields_for :quantidade do |items_fields| %>
-              <%= render partial: "item_fields", locals: { form: items_fields } %>
-              <% end %> 
-               
-            
-           
-          </div>
-     
-           <td></td>
+            <div id= "items">
+
+              <%= form.fields_for :quantidade do |item_fields| %>
+                <%= render partial: "item_fields", locals: { form: item_fields } %>
+              <% end %>               
+              
+              <div class="field">
+                <%= link_to_add_association('[+]', form, :items, form_name: 'form')%> 
+              </div>
+            </div>
 
           </tr>
 
@@ -68,12 +64,12 @@
         <tbody>
           <tr>
             <td> Subtotal: </td>
-            <td>"item.efetivado"</td>
+            <td>R$ 300,00</td>
           </tr>
            
           <tr>
            <td>Total: </td> 
-           <td><%= number_to_currency(purchase.total_compra) %></td>
+           <td>R$ 300,00</td>
           </tr>
            
           <tr>
