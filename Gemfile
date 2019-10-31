@@ -24,7 +24,7 @@ gem 'rails', '~> 5.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 #Flexible authentication solution for Rails with Warden
-gem 'devise', '~> 4.6', '>= 4.6.1'
+gem 'devise', '~> 4.7'
 #Devise Tradução (i18n)
 gem 'devise-i18n'
 #Simple authorization solution for Rails. All permissions are stored in a single location.
